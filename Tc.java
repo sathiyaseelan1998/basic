@@ -7,7 +7,7 @@ public class Tc
 	
 			try
 			{
-				int a=10/0;
+				int a=103/0;
 			}
 			catch(Exception e)
 			{
@@ -34,7 +34,7 @@ public class Tc
 			try
 			{
 				int a[]=new int[3];
-				a[10]=2;
+				a[10]=20;
 			}
 			catch(Exception e)
 			{
