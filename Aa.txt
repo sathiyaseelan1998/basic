@@ -1,0 +1,37 @@
+interface Inter
+{
+	void a();
+
+}
+
+interface Inter1 extends Inter
+{
+	void b();
+
+}
+
+class Aa implements Inter1
+{
+
+	void a()
+	{
+	
+		System.out.println("a");
+	}
+	void b()
+	{
+	
+		System.out.println("b");
+	}
+
+	public static void main(String arg[])
+	{
+		Aa ob=new AA();
+		ob.a();
+
+		ob.b();
+
+	}
+
+
+}

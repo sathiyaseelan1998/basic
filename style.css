@@ -1,0 +1,14 @@
+body{
+
+    
+    width: 50%;
+    height: 500px;
+    border: 2px solid;
+    background-color: cyan;
+}
+
+h1{
+
+    color: crimson;
+    text-align: center;
+}
