@@ -4,7 +4,7 @@ body{
     width: 50%;
     height: 500px;
     border: 2px solid;
-    background-color: cyan;
+    background-image: url("pg.jpg");
 }
 
 h1{
