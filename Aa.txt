@@ -16,7 +16,7 @@ class Aa implements Inter1
 	void a()
 	{
 	
-		System.out.println("a");
+		System.out.println("method a");
 	}
 	void b()
 	{
