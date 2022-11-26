@@ -28,7 +28,6 @@ class Aa implements Inter1
 	{
 		Aa ob=new AA();
 		ob.a();
-
 		ob.b();
 
 	}
