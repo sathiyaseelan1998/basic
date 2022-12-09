@@ -10,7 +10,7 @@ interface Inter1 extends Inter
 
 }
 
-class Aa implements Inter1
+class Abc implements Inter1
 {
 
 	void a()
