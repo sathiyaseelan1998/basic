@@ -16,7 +16,7 @@ class Abc implements Inter1
 	void a()
 	{
 	
-		System.out.println("method a");
+		System.out.println("method a ");
 	}
 	void b()
 	{
