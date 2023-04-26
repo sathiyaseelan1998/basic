@@ -1,0 +1,152 @@
+package com.task.program;
+
+public class Test2 {
+	
+	public static void main(String arg[]){
+		Test2 t=new Test2();
+		//t.repeatedElement();
+		//t.firstRepeatedElement();
+		//t.lastRepeatedElement();
+		//t.nonRepeatedElement();
+		//t.firstNonRepeatedElement();
+		//t.lasttNonRepeatedElement();
+		t.mostRepeatedElement();
+	}
+
+	private void mostRepeatedElement() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void lasttNonRepeatedElement() {
+		// TODO Auto-generated method stub
+		String str="sathiyaseelan";
+		char[] ch=str.toCharArray();
+		int count[]=new int[ch.length];
+		for(int i=0;i<ch.length;i++){
+			int c=1;
+			for(int j=i+1;j<ch.length;j++){
+				if(ch[i]==ch[j]){
+					count[j]=-1;
+					c++;
+				}
+			}
+			if(count[i]!=-1){
+				count[i]=c;
+			}
+		}
+		for(int i=count.length-1;i>=0;i--){
+			if(count[i]==1){
+				System.out.println(ch[i]+" "+count[i]);
+				break;
+			}
+		}
+	}
+
+	private void firstNonRepeatedElement() {
+		// TODO Auto-generated method stub
+		String str="sathiyaseelan";
+		char[] ch=str.toCharArray();
+		int count[]=new int[ch.length];
+		for(int i=0;i<ch.length;i++){
+			int c=1;
+			for(int j=i+1;j<ch.length;j++){
+				if(ch[i]==ch[j]){
+					count[j]=-1;
+					c++;
+				}
+			}
+			if(count[i]!=-1){
+				count[i]=c;
+			}
+			if(count[i]==1){
+				System.out.println(ch[i]+" "+count[i]);
+				break;
+			}
+		}
+	}
+
+	private void nonRepeatedElement() {
+		// TODO Auto-generated method stub
+		String str="sathiyaseelan";
+		char[] ch=str.toCharArray();
+		int count[]=new int[ch.length];
+		for(int i=0;i<ch.length;i++){
+			int c=1;
+			for(int j=i+1;j<ch.length;j++){
+				if(ch[i]==ch[j]){
+					count[j]=-1;
+					c++;
+				}
+			}
+			if(count[i]!=-1){
+				count[i]=c;
+			}
+			if(count[i]==1){
+				System.out.println(ch[i]+" "+count[i]);
+			}
+		}
+	}
+
+	private void lastRepeatedElement() {
+		// TODO Auto-generated method stub
+		String str="sathiyaseelan";
+		char[] ch=str.toCharArray();
+		boolean temp=false;
+		for(int i=ch.length-1;i>=0;i--){
+			for(int j=ch.length-2;j>0;j--){
+				if(ch[i]==ch[j]){
+					System.out.println(ch[i]);
+					temp=true;
+					break;
+				}
+			}
+			if(temp)
+				break;
+		}
+	}
+
+	private void firstRepeatedElement() {
+		// TODO Auto-generated method stub
+		String str="sathiyaeelan";
+		char[] ch=str.toCharArray();
+		boolean temp=false;
+		for(int i=0;i<ch.length;i++){
+			for(int j=i+1;j<ch.length;j++){
+				if(ch[i]==ch[j]){
+					System.out.println(ch[i]);
+					temp=true;
+					break;
+				}
+			}
+			if(temp){
+				break;
+			}
+		}
+	}
+
+	private void repeatedElement() {
+		// TODO Auto-generated method stub
+		String str="sathiyaseelan";
+		char[] ch=str.toCharArray();
+		int[] count=new int[ch.length];
+		for(int i=0;i<ch.length;i++){
+			int c=1;
+			for(int j=i+1;j<ch.length;j++){
+				if(ch[i]==ch[j]){
+					count[j]=-1;
+					c++;
+				}
+			}
+			if(count[i]!=-1){
+				count[i]=c;
+			}
+			if(count[i]>1)
+			System.out.println(count[i]+" "+ch[i]);
+		}
+		for(int i=0;i<count.length;i++){
+			//System.out.print(count[i]+" ");
+		}
+	}
+
+}
