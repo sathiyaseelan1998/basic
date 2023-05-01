@@ -10,12 +10,215 @@ public class Test2 {
 		//t.nonRepeatedElement();
 		//t.firstNonRepeatedElement();
 		//t.lasttNonRepeatedElement();
-		t.mostRepeatedElement();
+		//t.mostRepeatedElement();
+		//t.secondRepeatedElement();
+		//t.a2b4c5();
+		//t.a5b10c5();
+		//t.longestRepeatedElements();
+		//t.ascendingOrder();
+		//t.decendingOrder();
+		//t.addMatrix();
+		t.multipleMatrix();
+	}
+
+	private void multipleMatrix() {
+		// TODO Auto-generated method stub
+		int[][] a={{10,20,30},{10,20,30},{10,20,30}};
+		int[][] b={{10,20,30},{10,20,30},{10,20,30}};
+		int[][] c=new int[a.length][a[0].length];
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				c[i][j]=0;
+				for(int k=0;k<a[i].length;k++){
+					c[i][j]+=a[i][k]*b[k][j];
+				}
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void addMatrix() {
+		// TODO Auto-generated method stub
+		int[][] a={{10,20,30},{10,20,30},{10,20,30}};
+		int[][] b={{10,20,30},{10,20,30},{10,20,30}};
+		int x=a[0].length;
+		int y=b[0].length;
+		int[][] c=new int[x][x];
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				c[i][j]=a[i][j]+b[i][j];
+				
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void decendingOrder() {
+		// TODO Auto-generated method stub
+		int[] ar={25,12,15,50,10,39,34};
+		for(int i=0;i<ar.length;i++){
+			for(int j=i+1;j<ar.length;j++){
+				if(ar[i]<ar[j]){
+					int temp=ar[i];
+					ar[i]=ar[j];
+					ar[j]=temp;
+				}
+			}
+		}
+		for(int i=0;i<ar.length;i++){
+			System.out.println(ar[i]);
+		}
+	}
+
+	private void ascendingOrder() {
+		// TODO Auto-generated method stub
+		int[] ar={25,12,15,50,10,39,34};
+		for(int i=0;i<ar.length;i++){
+			for(int j=1;j<ar.length-i;j++){
+				if(ar[j]<ar[j-1]){
+					int temp=ar[j];
+					ar[j]=ar[j-1];
+					ar[j-1]=temp;
+				}
+			}
+			//System.out.println(ar[i]);
+		}
+		for(int i=0;i<ar.length;i++){
+			System.out.println(ar[i]);
+		}
+	}
+
+	private void longestRepeatedElements() {
+		// TODO Auto-generated method stub
+		String str="abcdeghbcd";
+		String lre="";
+		int n=str.length();
+		for(int i=0;i<n;i++){
+			for(int j=i+1;j<n;j++){
+				String x=lre(str.substring(i,n),str.substring(j,n));
+				
+				if(lre.length()<x.length()){
+					lre=x;
+				}
+			}
+		}
+		System.out.println(lre);
+	}
+
+	private String lre(String a, String b) {
+		// TODO Auto-generated method stub
+		int n=Math.min(a.length(), b.length());
+		for(int i=0;i<n;i++){
+			if(a.charAt(i)!=b.charAt(i)){
+				return a.substring(0, i);
+			}
+		}
+		return a.substring(0, n);
+	}
+
+	private void a5b10c5() {
+		// TODO Auto-generated method stub
+		String str="a5b10c5";
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+				char ch=str.charAt(i-1);
+				int n=0;
+				while(str.length()>i && str.charAt(i)>='0' && str.charAt(i)<='9'){
+					n=(n*10)+(str.charAt(i)-48);
+					i++;
+				}
+				for(int j=0;j<n;j++){
+					System.out.print(ch);
+				}
+			}
+			
+		}
+	}
+
+	private void a2b4c5() {
+		// TODO Auto-generated method stub
+		String str="a2b4c5";
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+				int n=str.charAt(i)-48;
+				for(int j=0;j<n;j++){
+					System.out.print(str.charAt(i-1));
+				}
+			}
+		}
+	}
+
+	private void secondRepeatedElement() {
+		// TODO Auto-generated method stub
+		String str="sathiyaseelan";
+		char[] ch=str.toCharArray();
+		int count[]=new int[ch.length];
+		for(int i=0;i<ch.length;i++){
+			int c=1;
+			for(int j=i+1;j<ch.length;j++){
+				if(ch[i]==ch[j]){
+					count[j]=-1;
+					c++;
+				}
+			}
+			if(count[i]!=-1){
+				count[i]=c;
+			}
+			
+		}
+		int big1=Integer.MIN_VALUE;
+		int big2=Integer.MIN_VALUE;
+		char chr1=0;
+		char chr2=0;
+		for(int i=0;i<count.length;i++){
+			if(count[i]>big1) {
+				big2=big1;
+				big1=count[i];
+				chr1=ch[i];
+			}
+			else if(count[i]>big2 && big1>count[i]){
+				big2=count[i];
+			}
+		}
+		for(int i=0;i<count.length;i++){
+			if(count[i]==big2){
+				chr2=ch[i];
+			}
+		}
+		System.out.println(big1+"  "+chr1);
+		System.out.println(big2+"  "+chr2);
+		
 	}
 
 	private void mostRepeatedElement() {
 		// TODO Auto-generated method stub
-		
+		String str="sathiyaseellllan";
+		char[] ch=str.toCharArray();
+		int[] count=new int[ch.length];
+		for(int i=0;i<ch.length;i++){
+			int c=1;
+			for(int j=i+1;j<ch.length;j++){
+				if(ch[i]==ch[j]){
+					count[j]=-1;
+					c++;
+				}
+			}
+			if(count[i]!=-1){
+				count[i]=c;
+			}
+			
+		}
+		int big=Integer.MIN_VALUE;
+		char chr = ' ';
+		for(int i=0;i<count.length;i++){
+			if(count[i]>big) {
+				big=count[i];
+				chr=ch[i];
+			}
+		}
+		System.out.print(chr+" is most repeated character for "+big+" times");
 	}
 
 	private void lasttNonRepeatedElement() {
