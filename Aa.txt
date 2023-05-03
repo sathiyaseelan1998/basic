@@ -2,7 +2,6 @@ interface Inter
 {
 	void a();
 
-
 }
 
 interface Inter1 extends Inter
