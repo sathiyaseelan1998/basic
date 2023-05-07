@@ -20,7 +20,49 @@ public class Test2 {
 		//t.addMatrix();
 		//t.multipleMatrix();
 		//t.spiralPattern();
-		t.zicZoc();
+		//t.zicZoc();
+		//int val=t.powerOfNo(2,5);
+		t.binaryToDecimal();
+		t.decimalToBinary();
+	}
+
+	private void decimalToBinary() {
+		// TODO Auto-generated method stub
+		int decimal=16;
+		String binary="";
+		while(decimal>0){
+			int rem=decimal%2;
+			binary=rem+binary;
+			decimal=decimal/2;
+		}
+		System.out.println(binary);
+	}
+
+	private void binaryToDecimal() {
+		// TODO Auto-generated method stub
+		int binary=10000;
+		int base=2;
+		int power=0;
+		int decimal=0;
+		while(binary>0){
+			int rem=binary%10;
+			rem=rem*powerOfNo(base, power);
+			decimal=decimal+rem;
+			power++;
+			binary=binary/10;
+		}
+		System.out.println(decimal);
+	}
+
+	private int powerOfNo(int base, int power) {
+		// TODO Auto-generated method stub
+		int total=1;
+		while(power>0){
+			total=total*base;
+			power--;
+		}
+		//System.out.println(total);
+		return total;
 	}
 
 	private void zicZoc() {
