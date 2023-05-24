@@ -36,3 +36,27 @@ where e.empId<>all(select empId from employee where job='ceo')
 group by branch
 having count(empId) >1
 order by count(empId);
+
+-------------------------------------------------------------------------------------------------
+
+use basic;
+
+select * from employee;
+
+update employee set salary=80000 where empId=3;
+
+select name,salary from employee where salary=
+(select max(salary) from employee);
+
+select name,branchId,salary from employee where salary =(
+select max(salary) from employee);
+
+
+select branchId,max(salary) from employee
+group by branchId;
+
+select e.name,e.salary,e.job,b.branch from employee as e inner join branch as b
+on e.branchId=b.branchId
+where salary in(
+select max(salary) from employee
+group by branchId);
