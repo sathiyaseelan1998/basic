@@ -84,4 +84,31 @@ group by e.branchId;
 
 select * from employee;
 
+----------------------------------------------------------------------------------------------------------
+
+use basic;
+
+select * from customer;
+
+select * from department;
+
+alter table customer drop column job;
+
+alter table customer add column deptId int;
+
+
+alter table customer add foreign key(deptId) references department(id);
+
+create table department(id int primary key,dept varchar(20),locId int,constraint fkLocId foreign key(locId) references location(id));
+
+desc customer;
+
+desc department;
+
+select count(*),deptId from customer group by deptId;
+
+select count(*),locId from department group by locId;
+
+select * from customer c join department d on c.deptId=d.id
+join location l on d.locId=l.id;
 
