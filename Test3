@@ -21,8 +21,129 @@ public class Test3 {
 		//t.givenNoOfRighttMove();
 		//t.longestRepeatedElement();
 		//t.addMatrix();
-		t.multipleMatrix();
+		//t.multipleMatrix();
+		//t.mergeArray();
+		//t.removeAllSpace();
+		//t.firstAndLastRemoveSpace();
+		//t.spiral();
+		//t.zicZoc();
 		
+	}
+
+	private void zicZoc() {
+		// TODO Auto-generated method stub
+		int[][] ar=new int[4][4];
+		int value=1;
+		for(int i=0;i<ar.length;i++){
+			
+			if(i%2==0){
+				for(int j=0;j<ar.length;j++){
+					ar[i][j]=value;
+					value++;
+				}
+			}
+			else{
+				for(int j=ar.length-1;j>=0;j--){
+					ar[i][j]=value;
+					value++;
+				}
+			}
+		}
+		for(int i=0;i<ar.length;i++){
+			for(int j=0;j<ar[i].length;j++){
+				System.out.print(ar[i][j]+"     ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void spiral() {
+		// TODO Auto-generated method stub
+		int[][] spiral=new int[8][8];
+		int value=1;
+		int minRow=0;
+		int minCol=0;
+		int maxRow=spiral.length;
+		int maxCol=spiral[0].length;
+		int n=maxRow*maxCol;
+		while(value<=n){
+			
+			for(int i=minCol;i<maxCol;i++){
+				spiral[minRow][i]=value;
+				value++;
+			}
+			minRow++;
+			for(int i=minRow;i<maxRow;i++){
+				spiral[i][maxCol-1]=value;
+				value++;
+			}
+			maxCol--;
+			for(int i=maxCol-1;i>=minCol;i--){
+				spiral[maxRow-1][i]=value;
+				value++;
+			}
+			maxRow--;
+			for(int i=maxRow-1;i>=minRow;i--){
+				spiral[i][minCol]=value;
+				value++;
+			}
+			minCol++;
+		}
+		for(int i=0;i<spiral.length;i++){
+			for(int j=0;j<spiral[i].length;j++){
+				System.out.print(spiral[i][j]+"  ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void firstAndLastRemoveSpace() {
+		// TODO Auto-generated method stub
+		String str=" Hi good morning ";
+		String word="";
+		for(int i=0;i<str.length();i++){
+			
+			if(!((i==0 & str.charAt(i)==' ') || 
+					(i==str.length()-1 && str.charAt(str.length()-1)==' '))){
+					word+=str.charAt(i);
+			}
+		}
+		System.out.println(word);
+		System.out.println(word.length());
+		System.out.println(str.length());
+
+		
+	}
+
+	private void removeAllSpace() {
+		// TODO Auto-generated method stub
+		String str="I am Indian";
+		String word="";
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)!=' '){
+				word+=str.charAt(i);
+			}
+		}
+		System.out.println(word);
+	}
+
+	private void mergeArray() {
+		// TODO Auto-generated method stub
+		int[] a={10,20,30,40};
+		int[] b={50,60,70};
+		int[] c=new int[a.length+b.length];
+		int j=0;
+		for(int i=0;i<a.length;i++){
+			c[j]=a[i];
+			j++;
+		}
+		for(int i=0;i<b.length;i++){
+			c[j]=b[i];
+			j++;
+		}
+		for(int i=0;i<c.length;i++){
+			System.out.print(c[i]+" ");
+		}
 	}
 
 	private void multipleMatrix() {
