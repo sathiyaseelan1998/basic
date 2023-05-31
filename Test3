@@ -1,5 +1,8 @@
 package com.task.program;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class Test3 {
 
 	public static void main(String[] args) {
@@ -28,7 +31,92 @@ public class Test3 {
 		//t.spiral();
 		//t.zicZoc();
 		//t.swappingNo();
-		t.swappingThreeNo();
+		//t.swappingThreeNo();
+		//t.palindrome();
+		//int p=t.powerOfNo(2,5);
+		//t.binaryToDecimal();
+		//t.decimalToBinary();
+		t.dateCalculation();
+	}
+
+	private void dateCalculation() {
+		// TODO Auto-generated method stub
+		int totalHR=800;
+		int noOfHR=5;
+		int days=totalHR/noOfHR;
+		int weeks=totalHR/(noOfHR*5);
+		int months=weeks/4;
+		float year=months/12;
+		int nonWorkingDay=weeks*2;
+		System.out.println("no of days : "+days);
+		System.out.println("no of weeks : "+weeks);
+		System.out.println("no of months : "+months);
+		System.out.println("no of year : "+year);
+		System.out.println("no of non working day : "+nonWorkingDay);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");   
+        Calendar cal = Calendar.getInstance();
+        
+        String start= sdf.format(cal.getTime());
+        System.out.println("current date : "+start);  
+        
+        cal.add(Calendar.MONTH, months);
+        String end = sdf.format(cal.getTime());  
+        
+        System.out.println("course ending data : "+end);  
+	}
+
+	private void decimalToBinary() {
+		// TODO Auto-generated method stub
+		int decimal=6;
+		String binary="";
+		while(decimal>0){
+			int rem=decimal%2;
+			binary=rem+binary;
+			decimal=decimal/2;
+		}
+		System.out.println(binary);
+	}
+
+	private void binaryToDecimal() {
+		// TODO Auto-generated method stub
+		int binary=1000;
+		int base=2;
+		int power=0;
+		int decimal=0;
+		while(binary>0){
+			int rem=binary%10;
+			decimal+=rem*powerOfNo(base, power);
+			power++;
+			binary=binary/10;
+		}
+		System.out.println(decimal);
+	}
+
+	private int powerOfNo(int base,int power) {
+		// TODO Auto-generated method stub
+		int result=1;
+		while(power>0){
+			result=result*base;
+			power--;
+		}
+		//System.out.println(result);
+		return result;
+	}
+
+	private void palindrome() {
+		// TODO Auto-generated method stub
+		String str="madam";
+		String rev="";
+		for(int i=str.length()-1;i>=0;i--){
+			rev+=str.charAt(i);
+		}
+		//System.out.println(rev);
+		if(str.equals(rev)){
+			System.out.println(str+" is palindrome");
+		}
+		else{
+			System.out.println(str+" is not palindrome");
+		}
 	}
 
 	private void swappingThreeNo() {
