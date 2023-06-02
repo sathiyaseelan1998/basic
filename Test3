@@ -36,7 +36,20 @@ public class Test3 {
 		//int p=t.powerOfNo(2,5);
 		//t.binaryToDecimal();
 		//t.decimalToBinary();
-		t.dateCalculation();
+		//t.dateCalculation();
+		t.reverseNo();
+	}
+
+	private void reverseNo() {
+		// TODO Auto-generated method stub
+		int no=12349;
+		int rev=0;
+		while(0<no){
+			int rem=no%10;
+			rev=(rev*10)+rem;
+			no=no/10;
+		}
+		System.out.println(rev);
 	}
 
 	private void dateCalculation() {
