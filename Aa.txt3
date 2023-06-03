@@ -25,7 +25,7 @@ class Abc implements Inter1
 		System.out.println("method b");
 	}
 
-	public static void main(String arg[])
+	public static void main(String args[])
 	{
 		Aa ob=new Aa();
 		ob.a();
