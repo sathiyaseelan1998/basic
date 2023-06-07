@@ -1,5 +1,7 @@
 package com.task.simple;
 
+import java.util.Scanner;
+
 public class Simple {
 
 	public static void main(String[] args) {
@@ -20,7 +22,146 @@ public class Simple {
 		//s.duplicateCharacterWithoutSpace();
 		//s.nonDuplicate();
 		//s.mostRepeated();
-		s.secondMostRepeated();
+		//s.secondMostRepeated();
+		//s.smallestNo();
+		//s.secondSmallestNo();
+		//s.addMatrix();
+		//s.multipleMatrix();
+		//s.printArray();
+		//s.print2DArray();
+		//s.a2b5c3();
+		//s.a10b10c10();
+	}
+
+	private void a10b10c10() {
+		// TODO Auto-generated method stub
+		String str="a10b10c10";
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+				char ch=str.charAt(i-1);
+				int n=0;
+				while(i<str.length() && str.charAt(i)>='0' && str.charAt(i)<='9'){
+					n=(n*10)+(str.charAt(i)-48);
+					i++;
+					
+				}
+				for(int j=0;j<n;j++){
+					System.out.print(ch);
+				}
+			}
+		}
+	}
+
+	private void a2b5c3() {
+		// TODO Auto-generated method stub
+		String str="a2b5c3";
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+				int n=str.charAt(i)-48;
+				for(int j=0;j<n;j++){
+					System.out.print(str.charAt(i-1));
+				}
+			}
+		}
+	}
+
+	private void print2DArray() {
+		// TODO Auto-generated method stub
+		int[][] ar=new int[3][3];
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<ar.length;i++){
+			for(int j=0;j<ar[i].length;j++){
+				System.out.println("Enter No "+i+"  "+j);
+				ar[i][j]=sc.nextInt();
+			}
+		}
+		for(int i=0;i<ar.length;i++){
+			for(int j=0;j<ar[i].length;j++){
+				System.out.print(ar[i][j]+"  ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void printArray() {
+		// TODO Auto-generated method stub
+		int[] ar=new int[3];
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<ar.length;i++){
+			System.out.println("Enter No");
+			ar[i]=sc.nextInt();
+		}
+		for(int i=0;i<ar.length;i++){
+			System.out.print(ar[i]+" ");
+		}
+	}
+
+	private void multipleMatrix() {
+		// TODO Auto-generated method stub
+		int[][] a={{1,2},{3,4}};
+		int[][] b={{1,2},{3,4}};
+		int[][] c=new int[a.length][a[0].length];
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				c[i][j]=0;
+				for(int k=0;k<a[i].length;k++){
+					c[i][j]+=a[i][k]*b[k][j];
+				}
+			}
+		}
+		for(int i=0;i<c.length;i++){
+			for(int j=0;j<c[i].length;j++){
+				System.out.print(c[i][j]+"  ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void addMatrix() {
+		// TODO Auto-generated method stub
+		int[][] a={{1,2,3},{4,5,6}};
+		int[][] b={{1,2,3},{4,5,6}};
+		int[][] c=new int[a.length][a[0].length];
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				c[i][j]=a[i][j]+b[i][j];
+			}
+		}
+		for(int i=0;i<c.length;i++){
+			for(int j=0;j<c[i].length;j++){
+				System.out.print(c[i][j]+"  ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void secondSmallestNo() {
+		// TODO Auto-generated method stub
+		int[] ar={10,20,30,5,3,14};
+		int small1=Integer.MAX_VALUE;
+		int small2=Integer.MAX_VALUE;
+		for(int i=0;i<ar.length;i++){
+			if(small1>ar[i]){
+				small2=small1;
+				small1=ar[i];
+			}
+			else if(small2>ar[i] && small1<small2){
+				small2=ar[i];
+			}
+		}
+		System.out.println(small1+"   "+small2);
+	}
+
+	private void smallestNo() {
+		// TODO Auto-generated method stub
+		int[] ar={10,20,30,5,3,14};
+		int small=Integer.MAX_VALUE;
+		for(int i=0;i<ar.length;i++){
+			if(small>ar[i]){
+				small=ar[i];
+			}
+		}
+		System.out.println(small);
 	}
 
 	private void secondMostRepeated() {
