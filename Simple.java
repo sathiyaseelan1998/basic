@@ -1,49 +1,425 @@
-package com.task.simple;
+package com.task.program;
 
-import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
-public class Simple {
+public class Test3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Simple s=new Simple();
-		//s.binarySort();
-		//int pos=s.binary();
-		//if(pos>0){
-			//System.out.println("present in "+pos+" position");
-		//}
-		//else{
-			//System.out.println("not present");
-		//}
-		//s.sorting();
-		//s.descending();
-		//s.duplicate();
-		//s.duplicateCharacter();
-		//s.duplicateCharacterWithoutSpace();
-		//s.nonDuplicate();
-		//s.mostRepeated();
-		//s.secondMostRepeated();
-		//s.smallestNo();
-		//s.secondSmallestNo();
-		//s.addMatrix();
-		//s.multipleMatrix();
-		//s.printArray();
-		//s.print2DArray();
-		//s.a2b5c3();
-		//s.a10b10c10();
+		Test3 t=new Test3();
+		//t.duplicateElement();
+		//t.firstNonRepeatedElement();
+		//t.ascendingOrder();
+		//t.biggestNo();
+		//t.secondBiggestNo();
+		//t.removeSpace();
+		//t.a5b2c3();
+		//t.a10b10c5();
+		//t.primeNo();
+		int[] ar={2,5,7,6,8};
+		//t.leftMove(Bar);
+		//t.givenNoOfleftMove();
+		//t.rightMove(ar);
+		//t.givenNoOfRighttMove();
+		//t.longestRepeatedElement();
+		//t.addMatrix();
+		//t.multipleMatrix();
+		//t.mergeArray();
+		//t.removeAllSpace();
+		//t.firstAndLastRemoveSpace();
+		//t.spiral();
+		//t.zicZoc();
+		//t.swappingNo();
+		//t.swappingThreeNo();
+		//t.palindrome();
+		//int p=t.powerOfNo(2,5);
+		//t.binaryToDecimal();
+		//t.decimalToBinary();
+		//t.dateCalculation();
+		t.reverseNo();
 	}
 
-	private void a10b10c10() {
+	private void reverseNo() {
 		// TODO Auto-generated method stub
-		String str="a10b10c10";
+		int no=12349;
+		int rev=0;
+		while(0<no){
+			int rem=no%10;
+			rev=(rev*10)+rem;
+			no=no/10;
+		}
+		System.out.println(rev);
+	}
+
+	private void dateCalculation() {
+		// TODO Auto-generated method stub
+		int totalHR=800;
+		int noOfHR=5;
+		int days=totalHR/noOfHR;
+		int weeks=totalHR/(noOfHR*5);
+		int months=weeks/4;
+		float year=months/12;
+		int nonWorkingDay=weeks*2;
+		System.out.println("no of days : "+days);
+		System.out.println("no of weeks : "+weeks);
+		System.out.println("no of months : "+months);
+		System.out.println("no of year : "+year);
+		System.out.println("no of non working day : "+nonWorkingDay);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");   
+        Calendar cal = Calendar.getInstance();
+        
+        String start= sdf.format(cal.getTime());
+        System.out.println("current date : "+start);  
+        
+        cal.add(Calendar.MONTH, months);
+        String end = sdf.format(cal.getTime());  
+        
+        System.out.println("course ending data : "+end);  
+	}
+
+	private void decimalToBinary() {
+		// TODO Auto-generated method stub
+		int decimal=6;
+		String binary="";
+		while(decimal>0){
+			int rem=decimal%2;
+			binary=rem+binary;
+			decimal=decimal/2;
+		}
+		System.out.println(binary);
+	}
+
+	private void binaryToDecimal() {
+		// TODO Auto-generated method stub
+		int binary=1000;
+		int base=2;
+		int power=0;
+		int decimal=0;
+		while(binary>0){
+			int rem=binary%10;
+			decimal+=rem*powerOfNo(base, power);
+			power++;
+			binary=binary/10;
+		}
+		System.out.println(decimal);
+	}
+
+	private int powerOfNo(int base,int power) {
+		// TODO Auto-generated method stub
+		int result=1;
+		while(power>0){
+			result=result*base;
+			power--;
+		}
+		//System.out.println(result);
+		return result;
+	}
+
+	private void palindrome() {
+		// TODO Auto-generated method stub
+		String str="madam";
+		String rev="";
+		for(int i=str.length()-1;i>=0;i--){
+			rev+=str.charAt(i);
+		}
+		//System.out.println(rev);
+		if(str.equals(rev)){
+			System.out.println(str+" is palindrome");
+		}
+		else{
+			System.out.println(str+" is not palindrome");
+		}
+	}
+
+	private void swappingThreeNo() {
+		// TODO Auto-generated method stub
+		int x=10;
+		int y=20;
+		int z=30;
+		x=x+y+z;
+		y=x-(y+z);
+		z=x-(y+z);
+		x=x-(y+z);
+		System.out.println(x+" "+y+" "+z);
+	}
+
+	private void swappingNo() {
+		// TODO Auto-generated method stub
+		int x=10;
+		int y=20;
+		
+		x=x+y;
+		y=x-y;
+		x=x-y;
+		System.out.println(x+"  "+y);
+	}
+
+	private void zicZoc() {
+		// TODO Auto-generated method stub
+		int[][] ar=new int[4][4];
+		int value=1;
+		for(int i=0;i<ar.length;i++){
+			
+			if(i%2==0){
+				for(int j=0;j<ar.length;j++){
+					ar[i][j]=value;
+					value++;
+				}
+			}
+			else{
+				for(int j=ar.length-1;j>=0;j--){
+					ar[i][j]=value;
+					value++;
+				}
+			}
+		}
+		for(int i=0;i<ar.length;i++){
+			for(int j=0;j<ar[i].length;j++){
+				System.out.print(ar[i][j]+"     ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void spiral() {
+		// TODO Auto-generated method stub
+		int[][] spiral=new int[8][8];
+		int value=1;
+		int minRow=0;
+		int minCol=0;
+		int maxRow=spiral.length;
+		int maxCol=spiral[0].length;
+		int n=maxRow*maxCol;
+		while(value<=n){
+			
+			for(int i=minCol;i<maxCol;i++){
+				spiral[minRow][i]=value;
+				value++;
+			}
+			minRow++;
+			for(int i=minRow;i<maxRow;i++){
+				spiral[i][maxCol-1]=value;
+				value++;
+			}
+			maxCol--;
+			for(int i=maxCol-1;i>=minCol;i--){
+				spiral[maxRow-1][i]=value;
+				value++;
+			}
+			maxRow--;
+			for(int i=maxRow-1;i>=minRow;i--){
+				spiral[i][minCol]=value;
+				value++;
+			}
+			minCol++;
+		}
+		for(int i=0;i<spiral.length;i++){
+			for(int j=0;j<spiral[i].length;j++){
+				System.out.print(spiral[i][j]+"  ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void firstAndLastRemoveSpace() {
+		// TODO Auto-generated method stub
+		String str=" Hi good morning ";
+		String word="";
+		for(int i=0;i<str.length();i++){
+			
+			if(!((i==0 && str.charAt(i)==' ') || 
+					(i==str.length()-1 && str.charAt(str.length()-1)==' '))){
+					word+=str.charAt(i);
+			}
+		}
+		System.out.println(word);
+		System.out.println(word.length());
+		System.out.println(str.length());
+
+		
+	}
+
+	private void removeAllSpace() {
+		// TODO Auto-generated method stub
+		String str="I am Indian";
+		String word="";
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)!=' '){
+				word+=str.charAt(i);
+			}
+		}
+		System.out.println(word);
+	}
+
+	private void mergeArray() {
+		// TODO Auto-generated method stub
+		int[] a={10,20,30,40};
+		int[] b={50,60,70};
+		int[] c=new int[a.length+b.length];
+		int j=0;
+		for(int i=0;i<a.length;i++){
+			c[j]=a[i];
+			j++;
+		}
+		for(int i=0;i<b.length;i++){
+			c[j]=b[i];
+			j++;
+		}
+		for(int i=0;i<c.length;i++){
+			System.out.print(c[i]+" ");
+		}
+	}
+
+	private void multipleMatrix() {
+		// TODO Auto-generated method stub
+		int[][] a={{1,2},{3,2}};
+		int[][] b={{4,5},{6,5}};
+		//System.out.println(a[0].length);
+		int[][] c=new int[a.length][a[0].length];
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				c[i][j]=0;
+				for(int k=0;k<a[i].length;k++){
+					c[i][j]+=a[i][k]*b[k][j];
+				}
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void addMatrix() {
+		// TODO Auto-generated method stub
+		int[][] a={{1,2,3},{3,2,1}};
+		int[][] b={{4,5,6},{6,5,4}};
+		int[][] c=new int[a.length][a[0].length];
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				c[i][j]+=a[i][j]+b[i][j];
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();
+		}
+		
+	}
+
+	private void longestRepeatedElement() {
+		// TODO Auto-generated method stub
+		String str="bcabcwxyzjikabcgwxyzh";
+		int n=str.length();
+		String lre="";
+		for(int i=0;i<str.length();i++){
+			for(int j=i+1;j<str.length();j++){
+				String x=lre(str.substring(i, n),str.substring(j, n));
+				
+				if(lre.length()<x.length()){
+					lre=x;
+				}
+			}
+		}
+		System.out.println(lre);
+	}
+
+	private String lre(String a, String b) {
+		// TODO Auto-generated method stub
+		int n=Math.min(a.length(), b.length());
+		for(int i=0;i<n;i++){
+			if(a.charAt(i)!=b.charAt(i))
+			return a.substring(0, i);
+		}
+		return a.substring(0, n);
+		
+	}
+
+	private void givenNoOfRighttMove() {
+		// TODO Auto-generated method stub
+		int[] ar={2,5,7,6,8};
+		int p=2;
+		for(int i=0;i<p;i++){
+			int[] right=rightMove(ar);
+			for(int j=0;j<right.length;j++){
+				System.out.print(right[j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	private int[] rightMove(int[] ar) {
+		// TODO Auto-generated method stub
+		int temp=ar[ar.length-1];
+		int i;
+		for(i=ar.length-1;i>=1;i--){
+			ar[i]=ar[i-1];
+		}
+		ar[i]=temp;
+		for(int j=0;j<ar.length;j++){
+			System.out.print(ar[j]+" ");
+		}
+		return ar;
+	}
+
+	private void givenNoOfleftMove() {
+		// TODO Auto-generated method stub
+		int p=2;
+		int[] ar={2,5,7,6,8};
+		for(int i=0;i<p;i++){
+			int left[]=leftMove(ar);
+			if(i==p-1){
+			for(int j=0;j<left.length;j++){
+				System.out.print(left[j]+" ");
+			}
+			}
+			//System.out.println();
+		}
+		
+		
+	}
+
+	private int[] leftMove(int[] ar) {
+		// TODO Auto-generated method stub
+		
+		int temp=ar[0];
+		int i;
+		for(i=0;i<ar.length-1;i++){
+			ar[i]=ar[i+1];
+		}
+		ar[i]=temp;
+		for(int j=0;j<ar.length;j++){
+			System.out.print(ar[j]+" ");
+		}
+		return ar;
+	}
+
+	private void primeNo() {
+		// TODO Auto-generated method stub
+		int no=18;
+		int count=0;
+		int div=2;
+		while(no>div){
+			if(no%div==0){
+				count++;
+			}
+			div++;
+		}
+		if(count==0){
+			System.out.println(no+" is prime");
+		}
+		else{
+			System.out.println(no+" is not prime");
+		}
+	}
+
+	private void a10b10c5() {
+		// TODO Auto-generated method stub
+		String str="a10b10c5";
 		for(int i=0;i<str.length();i++){
 			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
 				char ch=str.charAt(i-1);
 				int n=0;
-				while(i<str.length() && str.charAt(i)>='0' && str.charAt(i)<='9'){
-					n=(n*10)+(str.charAt(i)-48);
+				while(str.length()>i && str.charAt(i)>='0' && str.charAt(i)<='9'){
+					n=(n*10)+str.charAt(i)-48;
 					i++;
-					
 				}
 				for(int j=0;j<n;j++){
 					System.out.print(ch);
@@ -52,289 +428,63 @@ public class Simple {
 		}
 	}
 
-	private void a2b5c3() {
+	private void a5b2c3() {
 		// TODO Auto-generated method stub
-		String str="a2b5c3";
+		String str="a5b2c3";
 		for(int i=0;i<str.length();i++){
+
 			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
-				int n=str.charAt(i)-48;
-				for(int j=0;j<n;j++){
+				
+				for(int j=0;j<str.charAt(i)-48;j++){
 					System.out.print(str.charAt(i-1));
 				}
 			}
-		}
-	}
-
-	private void print2DArray() {
-		// TODO Auto-generated method stub
-		int[][] ar=new int[3][3];
-		Scanner sc=new Scanner(System.in);
-		for(int i=0;i<ar.length;i++){
-			for(int j=0;j<ar[i].length;j++){
-				System.out.println("Enter No "+i+"  "+j);
-				ar[i][j]=sc.nextInt();
-			}
-		}
-		for(int i=0;i<ar.length;i++){
-			for(int j=0;j<ar[i].length;j++){
-				System.out.print(ar[i][j]+"  ");
-			}
-			System.out.println();
-		}
-	}
-
-	private void printArray() {
-		// TODO Auto-generated method stub
-		int[] ar=new int[3];
-		Scanner sc=new Scanner(System.in);
-		for(int i=0;i<ar.length;i++){
-			System.out.println("Enter No");
-			ar[i]=sc.nextInt();
-		}
-		for(int i=0;i<ar.length;i++){
-			System.out.print(ar[i]+" ");
-		}
-	}
-
-	private void multipleMatrix() {
-		// TODO Auto-generated method stub
-		int[][] a={{1,2},{3,4}};
-		int[][] b={{1,2},{3,4}};
-		int[][] c=new int[a.length][a[0].length];
-		for(int i=0;i<a.length;i++){
-			for(int j=0;j<a[i].length;j++){
-				c[i][j]=0;
-				for(int k=0;k<a[i].length;k++){
-					c[i][j]+=a[i][k]*b[k][j];
-				}
-			}
-		}
-		for(int i=0;i<c.length;i++){
-			for(int j=0;j<c[i].length;j++){
-				System.out.print(c[i][j]+"  ");
-			}
-			System.out.println();
-		}
-	}
-
-	private void addMatrix() {
-		// TODO Auto-generated method stub
-		int[][] a={{1,2,3},{4,5,6}};
-		int[][] b={{1,2,3},{4,5,6}};
-		int[][] c=new int[a.length][a[0].length];
-		for(int i=0;i<a.length;i++){
-			for(int j=0;j<a[i].length;j++){
-				c[i][j]=a[i][j]+b[i][j];
-			}
-		}
-		for(int i=0;i<c.length;i++){
-			for(int j=0;j<c[i].length;j++){
-				System.out.print(c[i][j]+"  ");
-			}
-			System.out.println();
-		}
-	}
-
-	private void secondSmallestNo() {
-		// TODO Auto-generated method stub
-		int[] ar={10,20,30,5,3,14};
-		int small1=Integer.MAX_VALUE;
-		int small2=Integer.MAX_VALUE;
-		for(int i=0;i<ar.length;i++){
-			if(small1>ar[i]){
-				small2=small1;
-				small1=ar[i];
-			}
-			else if(small2>ar[i] && small1<small2){
-				small2=ar[i];
-			}
-		}
-		System.out.println(small1+"   "+small2);
-	}
-
-	private void smallestNo() {
-		// TODO Auto-generated method stub
-		int[] ar={10,20,30,5,3,14};
-		int small=Integer.MAX_VALUE;
-		for(int i=0;i<ar.length;i++){
-			if(small>ar[i]){
-				small=ar[i];
-			}
-		}
-		System.out.println(small);
-	}
-
-	private void secondMostRepeated() {
-		// TODO Auto-generated method stub
-		String str="sathiyaselelllan";
-		char[] ch=str.toCharArray();
-		int[] dup=new int[ch.length];
-		for(int i=0;i<ch.length;i++){
-			int count=1;
-			for(int j=i+1;j<ch.length;j++){
-				if(ch[i]==ch[j]){
-					dup[j]=-1;
-					count++;
-				}
-			}
-			if(dup[i]!=-1){
-				dup[i]=count;
-			}
-		}
-		int big1=Integer.MIN_VALUE;
-		int big2=Integer.MIN_VALUE;
-		for(int i=0;i<dup.length;i++){
-			if(big1<dup[i]){
-				big2=big1;
-				big1=dup[i];
-			}
-			else if(big2<dup[i] && big1>big2){
-				big2=dup[i];
-			}
-		}
-		System.out.println(big1+"  "+big2);
-		for(int i=0;i<dup.length;i++){
-			if(dup[i]==big2){
-				System.out.println(ch[i]);
-			}
-		}
-	}
-
-	private void mostRepeated() {
-		// TODO Auto-generated method stub
-		String str="sathiyaselelllan";
-		char[] ch=str.toCharArray();
-		int[] dup=new int[ch.length];
-		for(int i=0;i<ch.length;i++){
-			int count=1;
-			for(int j=i+1;j<ch.length;j++){
-				if(ch[i]==ch[j]){
-					dup[j]=-1;
-					count++;
-				}
-			}
-			if(dup[i]!=-1){
-				dup[i]=count;
-			}
-		}
-		int big=Integer.MIN_VALUE;
-		for(int i=0;i<dup.length;i++){
-			if(big<dup[i]){
-				big=dup[i];
-			}
-		}
-		for(int i=0;i<dup.length;i++){
 			
-			if(dup[i]==big){
-				System.out.println(ch[i]);
-			}
-		}
-		//System.out.println(big);
-	}
-
-	private void nonDuplicate() {
-		// TODO Auto-generated method stub
-		String str="sathiyaseelan";
-		char[] ch=str.toCharArray();
-		int[] dup=new int[ch.length];
-		for(int i=0;i<ch.length;i++){
-			int count=1;
-			for(int j=i+1;j<ch.length;j++){
-				if(ch[i]==ch[j]){
-					dup[j]=-1;
-					count++;
-				}
-			}
-			if(dup[i]!=-1){
-				dup[i]=count;
-			}
-			if(dup[i]==1){
-				//System.out.print(ch[i]+" ");
-			}
-			System.out.print(dup[i]+" ");
 		}
 	}
 
-	private void duplicateCharacterWithoutSpace() {
+	private void removeSpace() {
 		// TODO Auto-generated method stub
-		String str="hi i am sathya";
-		char[] ch=str.toCharArray();
-		int[] dup=new int[ch.length];
-		for(int i=0;i<ch.length;i++){
-			int count=1;
-			for(int j=i+1;j<ch.length;j++){
-				if(ch[i]==ch[j]){
-					dup[j]=-1;
-					count++;
-				}
-			}
-			if(dup[i]!=-1){
-				dup[i]=count;
-			}
-			if(dup[i]>1 && ch[i]!=' ')
-			System.out.println(ch[i]+"   "+dup[i]);
-		}
+		String str="   I am Indian   ";
+		System.out.println(str.trim());
 	}
 
-	private void duplicateCharacter() {
+	private void secondBiggestNo() {
 		// TODO Auto-generated method stub
-		String str="sathiyaseelan";
-		char[] ch=str.toCharArray();
-		int[] dup=new int[ch.length];
-		for(int i=0;i<ch.length;i++){
-			int count=1;
-			for(int j=i+1;j<ch.length;j++){
-				if(ch[i]==ch[j]){
-					dup[j]=-1;
-					count++;
-				}
-			}
-			if(dup[i]!=-1){
-				dup[i]=count;
-			}
-			if(dup[i]>1)
-			System.out.print(ch[i]+" ");
-		}
-	}
-
-	private void duplicate() {
-		// TODO Auto-generated method stub
-		int ar[]={10,20,10,30,20,40,50,10,30};
-		int dup[]=new int[ar.length];
-		for(int i=0;i<ar.length;i++){
-			int count=1;
-			for(int j=i+1;j<ar.length;j++){
-				if(ar[i]==ar[j]){
-					dup[j]=-1;
-					count++;
-				}
-			}
-			if(dup[i]!=-1){
-				dup[i]=count;
-			}
-			if(dup[i]>1)
-			System.out.print(ar[i]+" ");
-		}
-	}
-
-	private void descending() {
-		// TODO Auto-generated method stub
-		int[] ar={50,40,30,70,60,10,20};
+		int[] ar={23,10,13,50,8,34,50,15,11};
+		int big1=0;
+		int big2=0;
 		for(int i=0;i<ar.length;i++){
 			for(int j=i+1;j<ar.length;j++){
-				if(ar[i]<ar[j]){
-					int temp=ar[i];
-					ar[i]=ar[j];
-					ar[j]=temp;
+				if(big1<ar[i]){
+					big2=big1;
+					big1=ar[i];
+				}
+				else if(big2<ar[i] && big1>ar[i]){
+					big2=ar[i];
 				}
 			}
-			System.out.print(ar[i]+" ");
-		}
+			}
+		System.out.println(big2);
 	}
 
-	private void sorting() {
+	private void biggestNo() {
 		// TODO Auto-generated method stub
-		int[] ar={50,40,30,70,60,10,20};
+		int[] ar={23,10,13,50,8,34,34,15,11};
+		int big=0;
+		for(int i=0;i<ar.length;i++){
+			for(int j=i+1;j<ar.length;j++){
+				if(big<ar[i]){
+					big=ar[i];
+				}
+			}
+		}
+		System.out.println(big);
+	}
+
+	private void ascendingOrder() {
+		// TODO Auto-generated method stub
+		int[] ar={23,10,13,8,34,34,15,11};
 		for(int i=0;i<ar.length;i++){
 			for(int j=i+1;j<ar.length;j++){
 				if(ar[i]>ar[j]){
@@ -343,53 +493,57 @@ public class Simple {
 					ar[j]=temp;
 				}
 			}
+		}
+		for(int i=0;i<ar.length;i++){
 			System.out.print(ar[i]+" ");
 		}
 	}
 
-	private int binary() {
+	private void firstNonRepeatedElement() {
 		// TODO Auto-generated method stub
-		int[] ar={10,20,30,40,50,60,70};
-		int min=0;
-		int max=ar.length-1;
-		int no=70;
-		while(min<=max){
-			int mid=(min+max)/2;
-			if(no==ar[mid]){
-				//System.out.println(no+" is present in "+mid+" position");
-				return mid;
+		String str="sathiyaseelan";
+		char[] ch=str.toCharArray();
+		int[] dup=new int[str.length()];
+		for(int i=0;i<ch.length;i++){
+			int count=1;
+			for(int j=i+1;j<ch.length;j++){
+				if(ch[i]==ch[j]){
+					dup[j]=-1;
+					count++;
+				}
 			}
-			else if(no<ar[mid]){
-				max=mid-1;
-			}
-			else{
-				min=mid+1;
+			if(dup[i]!=-1){
+				dup[i]=count;
 			}
 		}
-		return -1;
-	}
-
-	private void binarySort() {
-		// TODO Auto-generated method stub
-		int[] ar={10,20,30,40,50,60,70};
-		int min=0;
-		int max=ar.length-1;
-		int no=200;
-		while(min<=max){
-			int mid=(min+max)/2;
-			if(no==ar[mid]){
-				System.out.println(no+" is present in "+mid+" position");
+		for(int i=0;i<dup.length;i++){
+			if(dup[i]==1){
+				System.out.print(ch[i]+" ");
 				break;
 			}
-			else if(no<ar[mid]){
-				max=mid-1;
-			}
-			else{
-				min=mid+1;
-			}
 		}
-		if(min>max){
-			System.out.println("not present");
+	}
+
+	private void duplicateElement() {
+		// TODO Auto-generated method stub
+		String str="sathiyaseelan";
+		char[] ch=str.toCharArray();
+		int[] dup=new int[ch.length];
+		for(int i=0;i<ch.length;i++){
+			int count=1;
+			for(int j=i+1;j<ch.length;j++){
+				if(ch[i]==ch[j]){
+					dup[j]=-1;
+					count++;
+				}
+			}
+			if(dup[i]!=-1){
+				dup[i]=count;
+			}
+			//System.out.print(dup[i]+" ");
+			if(dup[i]>1){
+				System.out.print(ch[i]+" ");
+			}
 		}
 	}
 
