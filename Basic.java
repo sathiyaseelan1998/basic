@@ -1,5 +1,9 @@
 package com.task.simple;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Basic {
 
 	public static void main(String[] args) {
@@ -11,7 +15,131 @@ public class Basic {
 		//b.secondBiggestNo();
 		//b.smallestNo();
 		//b.secondSmallestNo();
-		b.binarySearch();
+		//b.binarySearch();
+		//b.timeDifference();
+		//b.time12HR();
+		System.out.println(minutes("12:00pm-12:30am"));
+		//System.out.println(reverse(140));
+		//System.out.println(test("bytecode"));
+	}
+
+	private static String test(String str) {
+		// TODO Auto-generated method stub
+		String ar[]=str.split(" ");
+		String rev="";
+		String result="";
+		for(int i=str.length()-1;i>=0;i--){
+			rev+=str.charAt(i);
+		}
+		if(ar.length==1){
+			for(int i=0;i<rev.length();i++){
+				if(i==1 || i==rev.length()-1){
+					result+="--"+rev.charAt(i)+"--";
+				}
+				else{
+					result+=rev.charAt(i);
+				}
+			}
+			return result;
+		}
+		return rev;
+	}
+
+	private static String reverse(int no) {
+		// TODO Auto-generated method stub
+		int total=0;
+		for(int i=1;i<=no;i++){
+			total+=i;
+		}
+		String str=String.valueOf(total);
+		if(total>1000){
+			
+			String output="";
+			for(int i=0;i<str.length();i++){
+				if(i==0 || i==str.length()-1){
+					output+="--"+str.charAt(i)+"--";
+				}
+				else{
+					output+=str.charAt(i);
+				}
+			}
+			//total=Integer.parseInt(output);
+			return output; 
+		}
+		return str;
+	}
+
+	private static long minutes(String str) {
+		// TODO Auto-generated method stub
+		String ar[]=str.split("-");
+		for(String s:ar){
+			//System.out.println(s);
+		}
+		SimpleDateFormat df=new SimpleDateFormat("hh:mm");
+		SimpleDateFormat sdf=new SimpleDateFormat("hh:mm a");
+		Date d1=null;
+		Date d2=null;
+		String s1="";
+		String s2="";
+		long min=0;
+		try {
+			d1=df.parse(ar[0]);
+			d2=df.parse(ar[1]);
+			s1=sdf.format(d1);
+			s2=sdf.format(d2);
+			d1=sdf.parse(s1);
+			d2=sdf.parse(s2);
+			long diff=d2.getTime()-d1.getTime();
+			long sec=diff/1000;
+			 min=sec/60;
+			System.out.println(Math.abs(min));
+			System.out.println(min);
+			
+		} catch (Exception e) {
+			
+		}
+		return min;
+	}
+
+	private void time12HR() {
+		// TODO Auto-generated method stub
+		String ss="15:00:00";
+		SimpleDateFormat fd=new SimpleDateFormat("hh:mm:ss");
+		SimpleDateFormat sfd=new SimpleDateFormat("hh:mm:ss a");
+		Date t = null;
+		String str="";
+		try {
+			t = fd.parse(ss);
+			str=sfd.format(t);
+			System.out.println(str);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	private void timeDifference() {
+		// TODO Auto-generated method stub
+		String s="8:00:00";
+		String e="1:00:00";
+		
+		SimpleDateFormat sdf=new SimpleDateFormat("HH:mm:ss");
+		try {
+			Date d1=sdf.parse(s);
+			Date d2=sdf.parse(e);
+			long diff=d2.getTime()-d1.getTime();
+			System.out.println(diff);
+			long diffSec=diff/1000;
+			long min=diffSec/60;
+			System.out.println(min);
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		}
+		
+		
+		
 	}
 
 	private void binarySearch() {
