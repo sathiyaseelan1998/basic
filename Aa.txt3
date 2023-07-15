@@ -24,7 +24,7 @@ class Abc implements Inter1
 	
 		System.out.println("method b");
 	}
-	/**String str="this is play ground";
+	/*String str="this is play ground";
 		String[] s=str.split(" ");
 		String word="";
 		int count=0;**/
