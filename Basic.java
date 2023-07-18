@@ -18,9 +18,80 @@ public class Basic {
 		//b.binarySearch();
 		//b.timeDifference();
 		//b.time12HR();
-		System.out.println(minutes("12:00pm-12:30am"));
+		//System.out.println(minutes("12:00pm-12:30am"));
 		//System.out.println(reverse(140));
 		//System.out.println(test("bytecode"));
+		//b.a5b5c3();
+		//b.a10b10c5();
+		//b.reverseNo();
+		b.fibonacci();
+	}
+
+	private void fibonacci() {
+		// TODO Auto-generated method stub
+		int count=10;
+		int first=0;
+		int second=1;
+		int third=0;
+		for(int i=0;i<count;i++){
+			System.out.print(first+" ");
+			third=first+second;
+			first=second;
+			second=third;
+		}
+	}
+
+	private void reverseNo() {
+		// TODO Auto-generated method stub
+		int no=1234;
+		int rev=0;
+		while(no>0){
+			int rem=no%10;
+			rev=(rev*10)+rem;
+			no=no/10;
+		}
+		System.out.println(rev);
+		
+	}
+
+	private void a10b10c5() {
+		// TODO Auto-generated method stub
+		String str="a10b10c5";
+		for(int i=0;i<str.length();i++){
+			
+			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+				int count=0;
+				char ch=str.charAt(i-1);
+				int n=0;
+				while(str.length()>i && str.charAt(i)>='0' && str.charAt(i)<='9'){
+					n=(n*10)+(str.charAt(i)-48);
+					i++;
+				}
+				for(int j=0;j<n;j++){
+					System.out.print(ch);
+					
+						count++;
+					
+				}
+				System.out.println("===="+count);
+			}
+			
+		}
+		
+	}
+
+	private void a5b5c3() {
+		// TODO Auto-generated method stub
+		String str="a5b5c3";
+		for(int i=0;i<str.length();i++){
+			
+			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+				int n=str.charAt(i)-48;
+				for(int j=0;j<n;j++){
+					System.out.print(str.charAt(i-1));
+				}
+			}
+		}
 	}
 
 	private static String test(String str) {
