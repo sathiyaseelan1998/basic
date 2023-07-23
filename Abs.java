@@ -12,7 +12,7 @@ public abstract class Abs
  
 	static void set()
 	{
-		System.out.println(" static method");
+		System.out.println("static method");
 	}
 
 }
