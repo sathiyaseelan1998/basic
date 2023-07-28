@@ -82,5 +82,26 @@ select * from location where id=(
 select locId from department where id=(
 select deptId from customer where salary=(
 select max(salary) from customer)));
+----------------------------------------------------------------------------------------------------------------------
 
+SELECT * FROM location l;
+
+SELECT * FROM department d;
+
+SELECT * FROM customer c;
+
+
+select * from customer where deptId in(
+select id from department where locId=(
+select id from location where location='mumbai'));
+
+-- working in chennai only --
+select * from customer where deptId=any(
+select id from department where exists
+(select id from location where location='chennai' and location.id=department.locId));
+
+-- not working in chennai --
+select * from customer where deptId<>all(
+select id from department where exists
+(select id from location where location='chennai' and location.id=department.locId));
 
