@@ -1,5 +1,18 @@
 package com.task.simple;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 public class First {
 	int first=0;
 	int second=1;
@@ -7,6 +20,26 @@ public class First {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		/*
+		use basic;
+
+select * from customer order by salary desc;
+
+-- nth number of salary --
+
+select distinct(salary) from customer c1 where 5=(select count(distinct(salary)) from customer c2 where c2.salary>=c1.salary);
+
+select * from employee;
+
+select * from branch;
+
+select branchId,count(branchId) from employee group by branchId;
+
+select branch,count(e.branchId) from employee e inner join branch b on e.branchId=b.branchId group by e.branchId;
+
+
+select * from employee where branchId =(select branchId from branch where branch='chennai');
+		*/
 		First f=new First();
 		//f.duplicateElement();
 		//f.duplicateNumber();
@@ -33,7 +66,159 @@ public class First {
 		//f.primeNo();
 		//f.findNthPrime();
 		//f.addMatrix();
-		f.multipleMatrix();
+		//f.multipleMatrix();
+		//f.arrayList();
+		//f.linkedList();
+		//f.hashSet();
+		//f.linkedHashSet();
+		//f.treeSet();
+		//f.hashMap();
+		//f.linkedHashMap();
+		//f.treeMap();
+	
+	}
+
+
+	private void treeMap() {
+		// TODO Auto-generated method stub
+		TreeMap<Integer, String> hm=new TreeMap<>();
+		hm.put(1, "aa");
+		//hm.put(null, "aa");
+		hm.put(1, "bb");
+		hm.put(2, "cc");
+		hm.put(3, "dd");
+		
+		Set<Entry<Integer,String>> set=hm.entrySet();
+		Set<Integer> key=hm.keySet();
+		Collection<String> val=hm.values();
+		for(Entry<Integer,String> e:set){
+			System.out.println(e.getKey()+"---"+e.getValue());
+		}
+	}
+
+	private void linkedHashMap() {
+		// TODO Auto-generated method stub
+		LinkedHashMap<Integer, String> hm=new LinkedHashMap<>();
+		hm.put(1, "aa");
+		hm.put(null, "aa");
+		hm.put(1, "bb");
+		hm.put(2, "cc");
+		hm.put(3, "dd");
+		
+		Set<Entry<Integer,String>> set=hm.entrySet();
+		Set<Integer> key=hm.keySet();
+		Collection<String> val=hm.values();
+		for(Entry<Integer,String> e:set){
+			System.out.println(e.getKey()+"---"+e.getValue());
+		}
+	}
+
+	private void hashMap() {
+		// TODO Auto-generated method stub
+		HashMap<Integer, String> hm=new HashMap<>();
+		hm.put(1, "aa");
+		hm.put(null, "aa");
+		hm.put(1, "bb");
+		hm.put(2, "cc");
+		hm.put(3, "dd");
+		
+		Set<Entry<Integer,String>> set=hm.entrySet();
+		Set<Integer> key=hm.keySet();
+		Collection<String> val=hm.values();
+		for(Entry<Integer,String> e:set){
+			System.out.println(e.getKey()+"---"+e.getValue());
+		}
+		System.out.println("---------------");
+		for(Integer s:key){
+			System.out.println(s);
+		}
+		System.out.println("---------------");
+		for(String c:val){
+			System.out.println(c);
+		}
+		
+	}
+
+	private void treeSet() {
+		// TODO Auto-generated method stub
+		TreeSet< Integer> hs=new TreeSet<>();
+		hs.add(1);
+		hs.add(1);
+		//hs.add(null);		NullPointerException
+		hs.add(2);
+		hs.add(4);
+		hs.add(3);
+		Iterator<Integer> it=hs.iterator();
+		while(it.hasNext()){
+			System.out.println(it.next());
+			
+		}
+	}
+
+	private void linkedHashSet() {
+		// TODO Auto-generated method stub
+		LinkedHashSet< Integer> hs=new LinkedHashSet<>();
+		hs.add(1);
+		hs.add(1);
+		hs.add(null);
+		hs.add(2);
+		hs.add(4);
+		hs.add(3);
+		Iterator<Integer> it=hs.iterator();
+		while(it.hasNext()){
+			System.out.println(it.next());
+			
+		}
+	}
+
+	private void hashSet() {
+		// TODO Auto-generated method stub
+		HashSet< Integer> hs=new HashSet<>();
+		hs.add(1);
+		hs.add(1);
+		hs.add(null);
+		hs.add(2);
+		hs.add(3);
+		hs.add(4);
+		Iterator<Integer> it=hs.iterator();
+		while(it.hasNext()){
+			System.out.println(it.next());
+			
+		}
+		
+	}
+
+	private void linkedList() {
+		// TODO Auto-generated method stub
+		LinkedList<Integer> al=new LinkedList<>();
+		al.add(1);
+		al.add(3);
+		al.add(2);
+		al.add(null);
+		al.add(5);
+		al.add(2);
+		Iterator<Integer> it=al.iterator();
+		while(it.hasNext()){
+			System.out.println(it.next());
+			
+		}
+	}
+
+	private void arrayList() {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> al=new ArrayList<>();
+		al.add(1);
+		al.add(3);
+		al.add(2);
+		al.add(null);
+		al.add(5);
+		al.add(2);
+		Iterator<Integer> it=al.iterator();
+		while(it.hasNext()){
+			//al.add(9);    		ConcurrentModificationException
+			System.out.println(it.next());
+		}
+		
 	}
 
 	private void multipleMatrix() {
