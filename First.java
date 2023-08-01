@@ -75,7 +75,92 @@ select * from employee where branchId =(select branchId from branch where branch
 		//f.hashMap();
 		//f.linkedHashMap();
 		//f.treeMap();
+		//f.spiralPattern();
+		//f.zicZoc();
+		//f.longestRepeatedElement();
+		int ar[]={1,2,3,4,5};
+		ar=f.leftMove(ar);
 	
+	}
+
+
+	private int[] leftMove(int[] ar) {
+		// TODO Auto-generated method stub
+		int temp=ar[0];
+		int i;
+		for(i=0;i<ar.length-1;i++){
+			ar[i]=ar[i+1];
+		}
+		ar[i]=temp;
+		return ar;
+	}
+
+
+	private void longestRepeatedElement() {
+		// TODO Auto-generated method stub
+		String str="abchghfxyzzhaxyzzbcjhgg";
+		int n=str.length();
+		String lre="";
+		for(int i=0;i<n;i++){
+			for(int j=i+1;j<n;j++){
+				String x=lre(str.substring(i, n),str.substring(j, n));
+				if(lre.length()<x.length()){
+					lre=x;
+				}
+			}
+		}
+		System.out.println(lre);
+	}
+
+
+	private String lre(String a, String b) {
+		// TODO Auto-generated method stub
+		int n=Math.min(a.length(), b.length());
+		for(int i=0;i<n;i++){
+			if(a.charAt(i)!=b.charAt(i)){
+				return a.substring(0, i);
+			}
+		}
+		return a.substring(0, n);
+	}
+
+
+	private void zicZoc() {
+		// TODO Auto-generated method stub
+		int[][] ar=new int[7][7];
+		int value=1;
+		for(int i=0;i<ar.length;i++){
+			if(i%2==0){
+				for(int j=0;j<ar[i].length;j++){
+					ar[i][j]=value++;
+				}
+			}
+			else{
+				for(int j=ar[i].length-1;j>=0;j--){
+					ar[i][j]=value++;
+				}
+			}
+		}
+		for(int i=0;i<ar.length;i++){
+			for(int j=0;j<ar[i].length;j++){
+				System.out.print(ar[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+
+	private void spiralPattern() {
+		// TODO Auto-generated method stub
+		int[][] spiral=new int[4][4];
+		int minRow=0;
+		int minCol=0;
+		int maxRow=spiral.length;
+		int maxCol=spiral[0].length;
+		int n=maxRow*maxCol;
+		int value=1;
+		while(value<=n){
+		}
 	}
 
 
