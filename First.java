@@ -79,8 +79,40 @@ select * from employee where branchId =(select branchId from branch where branch
 		//f.zicZoc();
 		//f.longestRepeatedElement();
 		int ar[]={1,2,3,4,5};
-		ar=f.leftMove(ar);
-	
+		//ar=f.leftMove(ar);
+		//f.twiceLeftMove();
+		//ar=f.rightMove(ar);
+	}
+
+
+	private int[] rightMove(int[] ar) {
+		// TODO Auto-generated method stub
+		int temp=ar[ar.length-1];
+		int i;
+		for(i=ar.length-1;i>=1;i--){
+			ar[i]=ar[i-1];
+		}
+		ar[i]=temp;
+		for(i=0;i<ar.length;i++){
+			System.out.print(ar[i]+" ");
+		}
+		return ar;
+	}
+
+
+	private void twiceLeftMove() {
+		// TODO Auto-generated method stub
+		int ar[]={1,2,3,4,5};
+		int p=4;
+		for(int i=0;i<p;i++){
+			ar=leftMove(ar);
+			if(i==p-1)
+			for(int j=0;j<ar.length;j++){
+				
+				System.out.print(ar[j]+" ");
+			}
+			//System.out.println();
+		}
 	}
 
 
@@ -92,6 +124,9 @@ select * from employee where branchId =(select branchId from branch where branch
 			ar[i]=ar[i+1];
 		}
 		ar[i]=temp;
+		for(int j=0;j<ar.length;j++){
+			//System.out.print(ar[j]+" ");
+		}
 		return ar;
 	}
 
@@ -160,6 +195,28 @@ select * from employee where branchId =(select branchId from branch where branch
 		int n=maxRow*maxCol;
 		int value=1;
 		while(value<=n){
+			for(int i=minCol;i<maxCol;i++){
+				spiral[minRow][i]=value++;
+			}
+			minRow++;
+			for(int i=minRow;i<maxRow;i++){
+				spiral[i][maxCol-1]=value++;
+			}
+			maxCol--;
+			for(int i=maxCol-1;i>=minCol;i--){
+				spiral[maxRow-1][i]=value++;
+			}
+			maxRow--;
+			for(int i=maxRow-1;i>=minRow;i--){
+				spiral[i][minCol]=value++;
+			}
+			minCol++;
+		}
+		for(int i=0;i<spiral.length;i++){
+			for(int j=0;j<spiral.length;j++){
+				System.out.print(spiral[i][j]+" ");
+			}
+			System.out.println();
 		}
 	}
 
