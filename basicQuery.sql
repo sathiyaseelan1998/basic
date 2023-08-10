@@ -105,3 +105,31 @@ select * from customer where deptId<>all(
 select id from department where exists
 (select id from location where location='chennai' and location.id=department.locId));
 
+-----------------------------------------------------------------------------------------------
+use basic;
+
+SELECT * FROM location l;
+
+SELECT * FROM department d;
+
+SELECT * FROM customer c;
+
+select deptId,count(deptId) from customer group by deptId;
+
+-- find department count each department --
+select d.dept,count(c.deptId) from customer c right join department d on c.deptId=d.id group by c.deptId;
+
+-- find location count each location --
+select l.location,count(d.locId) from department d right join location l on d.locId=l.id group by d.locId;
+
+-- find working in chennai only --
+select * from customer where deptId in(
+select id from department where locId=(
+select id from location where location='chennai'));
+
+
+-- find noty working in chennai only --
+select * from customer where deptId <>all(
+select id from department where locId=(
+select id from location where location='chennai'))
+
