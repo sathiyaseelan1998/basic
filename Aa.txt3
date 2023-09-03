@@ -7,7 +7,7 @@ interface Inter
 interface Inter1 extends Inter
 {
 	void b();
-	
+	 
 
 }
 
