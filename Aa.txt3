@@ -1,6 +1,6 @@
 interface Inter
 {
-	void a();     
+	void a();      
 
 }
 
