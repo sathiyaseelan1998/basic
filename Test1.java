@@ -20,6 +20,61 @@ public class Test1 {
 		//t.a10b5();
 		//t.addMatrix();
 		//t.multipleMatrix();
+		//t.pattern1();
+		//t.pattern2();
+		//t.pattern3();
+		t.pattern4();
+	}
+
+	private void pattern4() {
+		// TODO Auto-generated method stub
+		int n=5;
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=i;j++){
+				System.out.print("  ");
+			}
+			for(int j=i;j<=n;j++){
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void pattern3() {
+		// TODO Auto-generated method stub
+		int n=5;
+		for(int i=1;i<=n;i++){
+			for(int j=i;j<=n;j++){
+				System.out.print("  ");
+			}
+			for(int j=1;j<=i;j++){
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		
+	}
+
+	private void pattern2() {
+		// TODO Auto-generated method stub
+		int n=5;
+		for(int i=1;i<=n;i++){
+			for(int j=i;j<=n;j++){
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void pattern1() {
+		// TODO Auto-generated method stub
+		int n=5;
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=i;j++){
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
 	}
 
 	private void multipleMatrix() {
