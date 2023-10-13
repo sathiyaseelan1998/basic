@@ -23,10 +23,53 @@ public class Test {
 		//t.addMatrix();
 		//t.multipleMatrix();
 		//t.a5b3c3();
-		t.a10b10c5();
+		//t.a10b10c5();
+		//t.zigZog();
+		t.left();
 	}
 
 	
+
+	private void left() {
+		// TODO Auto-generated method stub
+		int n=5;
+		int alp=65;
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=i;j++){
+				System.out.print((char)(alp+i-1)+" ");
+			}
+			System.out.println();
+		}
+		
+	}
+
+
+
+	private void zigZog() {
+		// TODO Auto-generated method stub
+		int[][] a=new int[4][4];
+		int val=1;
+		for(int i=0;i<a.length;i++){
+			if(i%2==0){
+				for(int j=0;j<a.length;j++){
+					a[i][j]=val++;
+				}
+			}
+			else{
+				for(int j=a.length-1;j>=0;j--){
+					a[i][j]=val++;
+				}
+			}
+		}
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				System.out.print(a[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+
 
 	private void a10b10c5() {
 		// TODO Auto-generated method stub
