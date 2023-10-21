@@ -23,6 +23,22 @@ select address,count(id) as countOfMembers from employee group by address;
 
 select job,avg(salary) from employee group by job;
 
+
+
+
+
+use basic;
+
+SELECT * FROM customer c;
+
+SELECT * FROM department d;
+
+SELECT * FROM location l;
+
+select * from customer where deptId in
+(select id from department where locId=
+(select id from location where location='delhi'));
+
 select job,count(id)as member from employee group by job having member>2;
 
 select name from employee where name like 'b%';
