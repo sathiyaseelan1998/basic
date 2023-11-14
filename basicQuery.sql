@@ -133,3 +133,15 @@ select * from customer where deptId <>all(
 select id from department where locId=(
 select id from location where location='chennai'))
 
+---------------------------------------------------------------------------------------------------------------------
+
+use basic;
+
+select * from emp;
+
+select count(*) from emp where dept='actor';
+
+select name from emp where name like '__r%';
+
+select * from emp where id>5 and id<8;
+
