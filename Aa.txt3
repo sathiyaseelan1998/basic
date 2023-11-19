@@ -1,6 +1,6 @@
 interface Inter  
 { 
-	void a(); //abstract method 
+	void a(); //abstract method
 } 
 interface Inter1 extends Inter
 {
