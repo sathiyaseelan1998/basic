@@ -11,10 +11,149 @@ public class Test4 {
 		//t.swappingNo();
 		//t.secondBiggestNo();
 		//t.secondSmallestNo();
-		t.binarySearch();
+		//t.linearSearch();
+		//t.a5b5c3();
+		//t.a10b10c3();
+		//t.leftMove();
+		//t.rightMove();
+		//int[] ar={1,2,3,4,5};
+		//t.leftNthMove(ar);
+		//t.reverseString();
+		//t.reverseNumber();
+		t.spiral();
 	}
 
-	private void binarySearch() {
+	private void spiral() {
+		// TODO Auto-generated method stub
+		int[][] ar=new int[10][10];
+		int n=ar.length*ar[0].length;
+		int minRow=0;
+		int minCol=0;
+		int maxRow=ar.length;
+		int maxCol=ar[0].length;
+		int val=1;
+		while(val<=n){
+			for(int i=minCol;i<maxCol;i++){
+				ar[minRow][i]=val++;
+			}
+			minRow++;
+			for(int i=minRow;i<maxRow;i++){
+				ar[i][maxCol-1]=val++;
+			}
+			maxCol--;
+			for(int i=maxCol-1;i>=minCol;i--){
+				ar[maxRow-1][i]=val++;
+			}
+			maxRow--;
+			for(int i=maxRow-1;i>=minRow;i--){
+				ar[i][minCol]=val++;
+			}
+			minCol++;
+		}
+		for(int i=0;i<ar.length;i++){
+			for(int j=0;j<ar[i].length;j++){
+				System.out.print(ar[i][j]+"  ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void reverseNumber() {
+		// TODO Auto-generated method stub
+		int no=1234;
+		int n=0;
+		while(0<no){
+			int rem=no%10;
+			n=(n*10)+rem;
+			no=no/10;
+		}
+		System.out.println(n);
+		
+	}
+
+	private void reverseString() {
+		// TODO Auto-generated method stub
+		String str="dhoni";
+		String rev="";
+		for(int i=str.length()-1;i>=0;i--){
+			rev+=str.charAt(i);
+		}
+		System.out.println(rev);
+	}
+
+	private void leftNthMove(int[] ar) {
+		// TODO Auto-generated method stub
+		int p=2;
+		for(int i=0;i<p;i++){
+			rightMove(ar);
+		}
+		for(int i=0;i<ar.length;i++){
+			System.out.print(ar[i]+" ");
+		}
+	}
+
+	private void rightMove(int[] ar) {
+		// TODO Auto-generated method stub
+		//int[] ar={1,2,3,4,5};
+		int temp=ar[ar.length-1];
+		int i;
+		for(i=ar.length-1;i>0;i--){
+			ar[i]=ar[i-1];
+		}
+		ar[i]=temp;
+		for(int j=0;j<ar.length;j++){
+			//System.out.print(ar[j]+" ");
+		}
+	}
+
+	private int[] leftMove(int[] ar) {
+		// TODO Auto-generated method stub
+		//int[] ar={1,2,3,4,5};
+		int temp=ar[0];
+		int i;
+		for(i=0;i<ar.length-1;i++){
+			ar[i]=ar[i+1];
+		}
+		ar[i]=temp;
+		for(int j=0;j<ar.length;j++){
+			//System.out.print(ar[j]+" ");
+		}
+		return ar;
+	}
+
+	private void a10b10c3() {
+		// TODO Auto-generated method stub
+		String str="a10b10c3";
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+				char ch=str.charAt(i-1);
+				int n=0;
+				while(str.length()>i && str.charAt(i)>='0' && str.charAt(i)<='9'){
+					n=(n*10)+str.charAt(i)-48;
+					i++;
+				}
+				for(int j=0;j<n;j++){
+					System.out.print(ch);
+				}
+			}
+		}
+	}
+
+	private void a5b5c3() {
+		// TODO Auto-generated method stub
+		String str="a5b5c3";
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+				char ch=str.charAt(i-1);
+				int n=str.charAt(i)-48;
+				for(int j=0;j<n;j++){
+					System.out.print(ch);
+				}
+			}
+		}
+	}
+
+	private void linearSearch() {
 		// TODO Auto-generated method stub
 		int ar[]={10,20,30,40,50};
 		int no=70;
