@@ -20,7 +20,108 @@ public class Test4 {
 		//t.leftNthMove(ar);
 		//t.reverseString();
 		//t.reverseNumber();
-		t.spiral();
+		//t.spiral();
+		//t.addMatrix();
+		//t.multipleMatrix();
+		//t.pattern1();
+		//t.pattern2();
+		//t.pattern3();
+		//t.pattern4();
+		t.pattern5();
+	}
+
+	private void pattern5() {
+		// TODO Auto-generated method stub
+		int n=5;
+		int alp=65;
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=i;j++){
+				System.out.print((char)(alp-1+j)+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void pattern4() {
+		// TODO Auto-generated method stub
+		int n=5;
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=i;j++){
+				System.out.print("  ");
+			}
+			for(int j=i;j<=n;j++){
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void pattern3() {
+		// TODO Auto-generated method stub
+		int n=5;
+		for(int i=1;i<=n;i++){
+			for(int j=i;j<=n;j++){
+				System.out.print("  ");
+			}
+			for(int j=1;j<=i;j++){
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void pattern2() {
+		// TODO Auto-generated method stub
+		int n=5;
+		for(int i=1;i<=n;i++){
+			for(int j=i;j<=n;j++){
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void pattern1() {
+		// TODO Auto-generated method stub
+		int n=5;
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=i;j++){
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void multipleMatrix() {
+		// TODO Auto-generated method stub
+		int[][] a={{1,2,3},{4,5,6},{7,8,9}};
+		int[][] b={{1,2,3},{4,5,6},{7,8,9}};
+		int[][] c=new int[a.length][a[0].length];
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				c[i][j]=0;
+				for(int k=0;k<a[i].length;k++){
+					c[i][j]+=a[i][k]+b[k][j];
+				}
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	private void addMatrix() {
+		// TODO Auto-generated method stub
+		int[][] a={{1,2,3},{4,5,6}};
+		int[][] b={{1,2,3},{4,5,6}};
+		int[] c[]=new int[a.length][a[0].length];
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				c[i][j]=a[i][j]+b[i][j];
+				
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();
+		}
 	}
 
 	private void spiral() {
