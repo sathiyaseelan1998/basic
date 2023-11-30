@@ -27,7 +27,88 @@ public class Test4 {
 		//t.pattern2();
 		//t.pattern3();
 		//t.pattern4();
-		t.pattern5();
+		//t.pattern5();
+		//t.mergeArray();
+		//t.swappingArray();
+		t.addZero();
+	}
+
+	private void addZero() {
+		// TODO Auto-generated method stub
+		int no=1234;
+		int count=4;
+		/*while(no>0){
+			//int rem=no%10;
+			//count++;
+			//no=no/10;
+		}*/
+		System.out.println(count);
+		int[] a=new int[2*count];
+		
+		while(no>0){
+			
+		for(int i=a.length-1;i>=0;i--){
+			int k=0;
+			if(i%2!=0){
+				
+					int rem=no%10;
+					a[k]=rem;
+					k++;
+					no=no/10;
+			}
+			else{
+				a[k]=0;
+				k++;
+			}
+			System.out.print(a[i]);
+		}
+		}
+	}
+
+	private void swappingArray() {
+		// TODO Auto-generated method stub
+		int[] a={1,2,3};
+		int[] b={4,5,6};
+		int[] c=new int[a.length];
+		for(int i=0;i<c.length;i++){
+			c[i]=a[i]+b[i];
+			a[i]=c[i]-a[i];
+			b[i]=c[i]-b[i];
+		}
+		// without using third variable
+		for(int i=0;i<a.length;i++){
+			
+			a[i]=a[i]+b[i];
+			b[i]=a[i]-b[i];
+			a[i]=a[i]-b[i];
+		}
+		
+		
+		for(int i=0;i<a.length;i++){
+			
+			System.out.println(a[i]+"  "+b[i]);
+		}
+		
+		
+	}
+
+	private void mergeArray() {
+		// TODO Auto-generated method stub
+		int[] a={1,2,3};
+		int[] b={4,5,6};
+		int[] c=new int[a.length+b.length];
+		int m=0;
+		for(int i=0;i<a.length;i++){
+			c[m]=a[i];
+			m++;
+		}
+		for(int i=0;i<b.length;i++){
+			c[m]=b[i];
+			m++;
+		}
+		for(int i=0;i<c.length;i++){
+			System.out.print(c[i]+" ");
+		}
 	}
 
 	private void pattern5() {
