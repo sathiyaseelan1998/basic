@@ -47,21 +47,23 @@ public class Test4 {
 		
 		while(no>0){
 			
-		for(int i=a.length-1;i>=0;i--){
-			int k=0;
+		for(int i=0;i<a.length;i++){
 			if(i%2!=0){
 				
 					int rem=no%10;
-					a[k]=rem;
-					k++;
+					a[i]=rem;
+				
 					no=no/10;
 			}
 			else{
-				a[k]=0;
-				k++;
+				a[i]=0;
+				
 			}
-			System.out.print(a[i]);
+			//System.out.print(a[i]);
 		}
+		}
+		for(int i=a.length-1;i>=0;i--){
+			System.out.print(a[i]);
 		}
 	}
 
