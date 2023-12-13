@@ -6,7 +6,6 @@ interface Inter1 extends Inter
 {
 	void b(); 
 } 
-
 class Abc implements Inter1
 {
 
