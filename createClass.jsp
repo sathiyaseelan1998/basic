@@ -19,7 +19,7 @@
 	color: red;
 }
 </style>
-<%-- <jsp:include page="header.jsp"></jsp:include> --%>
+ <jsp:include page="header.jsp"></jsp:include> 
 
 </head>
 
@@ -99,6 +99,6 @@ ${errorMessage}
 
 <br><br><br><br><br>
 </body>
-<%-- <jsp:include page="footer.jsp"></jsp:include> --%>
+ <jsp:include page="footer.jsp"></jsp:include> 
 
 </html>
