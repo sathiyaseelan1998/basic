@@ -11,7 +11,73 @@ public class Test5 {
 		//t.secondMaxValue();
 		//t.minValue();
 		//t.secondMinValue();
-		t.swapValue();
+		//t.swapValue();
+		//t.duplicateNumber();
+		int[] ar={1,2,3,4,5};
+		//t.moveNumber(ar);
+		//t.moveNTHTime();
+		t.a5b3c2();
+	}
+
+	private void a5b3c2() {
+		// TODO Auto-generated method stub
+		String str="a10b3c10";
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+				char ch=str.charAt(i-1);
+				//int n=str.charAt(i)-48;
+				int n=0;
+				while(i<str.length() && str.charAt(i)>='0' && str.charAt(i)<='9'){
+					n=(n*10)+(str.charAt(i)-48);
+					i++;
+				}
+				for(int j=0;j<n;j++){
+					System.out.print(ch);
+				}
+			}
+		}
+	}
+
+	private void moveNTHTime() {
+		// TODO Auto-generated method stub
+		int[] ar={1,2,3,4,5};
+		int m=3;
+		for(int i=0;i<m;i++){
+			moveNumber(ar);
+		}
+		for(int i=0;i<ar.length;i++){
+			System.out.print(ar[i]+" ");
+		}
+	}
+
+	private int[] moveNumber(int[] ar) {
+		// TODO Auto-generated method stub
+		
+		//int temp=ar[0];
+		int temp=ar[ar.length-1];
+		int i;
+		//for(i=0;i<ar.length-1;i++){
+			//ar[i]=ar[i+1];
+		for(i=ar.length-1;i>=1;i--){
+			ar[i]=ar[i-1];
+		}
+		ar[i]=temp;
+		for(int j=0;j<ar.length;j++){
+			//System.out.print(ar[j]+" ");
+		}
+		return ar;
+	}
+
+	private void duplicateNumber() {
+		// TODO Auto-generated method stub
+		int[] ar={10,10,90,90,20,40,20};
+		for(int i=0;i<ar.length;i++){
+			for(int j=i+1;j<ar.length;j++){
+				if(ar[i]==ar[j]){
+					System.out.println(ar[i]);
+				}
+			}
+		}
 	}
 
 	private void swapValue() {
