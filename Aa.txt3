@@ -3,7 +3,7 @@ interface Inter
 	void a(); /incomplete method  
 } 
 interface Inter1 extends Inter
-{ 
+{
 	void b(); // incomplete method
 } 
 class Abc implements Inter1
