@@ -1,6 +1,6 @@
 interface Inter 
 {
-	void a(); /incomplete method  
+	void a(); /incomplete method 
 } 
 interface Inter1 extends Inter
 {
