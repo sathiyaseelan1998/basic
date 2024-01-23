@@ -4,7 +4,7 @@ interface Inter
 } 
 interface Inter1 extends Inter
 {
-	void b(); // incomplete method
+	void b(); // incomplete method 
 } 
 class Abc implements Inter1
 {
