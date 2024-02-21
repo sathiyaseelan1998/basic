@@ -1,0 +1,107 @@
+use demo;
+
+-- create table
+create table branch(id int primary key,branch varchar(20));
+
+-- create table with foreign key
+create table employee(id int primary key,name varchar(20),salary int,brId int,constraint fkBrId foreign key(brId) references branch(id));
+
+create table customer(id int primary key,name varchar(20),brId int,foreign key(brId) references branch(id));
+
+-- add column
+alter table customer add column salary int;
+
+-- drop column
+alter table customer drop column salary;
+
+-- change table name
+alter table customer rename to cust;
+
+alter table cust rename to customer;
+
+-- change column name
+alter table customer rename column salary to amount;
+
+-- insert values
+insert into branch(id,branch) values(1,'chennai');
+
+insert into branch values(2,'trichy'),(3,'salam');
+
+-- update value
+update customer set name='arun' where id=2;
+
+-- delete value
+delete from customer where id=3;
+
+-- fetch data
+select * from branch;
+
+select * from employee;
+
+select * from customer;
+
+-- fetch data particular column
+select name from employee;
+
+-- using AND , OR operator
+select * from employee where salary>=50000 and salary<=70000;
+
+select * from employee where salary=30000 or salary=70000;
+
+-- using in,not in
+select * from employee where name in ('virat');
+
+select * from employee where name not in('virat');
+
+-- using between (range of value)
+select * from employee where salary between 60000 and 70000;
+
+-- limt
+select * from employee limit 2;
+
+-- distinct remove duplicate
+select distinct(salary) from employee;
+
+select distinct salary from employee;
+
+-- using like % zero or more character , - one character
+select name from employee where name like 'd%';
+
+select name from employee where name like '%t';
+
+select name from employee where name like '__h%';
+
+-- order by
+select salary from employee order by salary;
+
+select salary from employee order by salary desc;
+
+-- aggregate function
+select max(salary) from employee;
+
+select min(salary) from employee;
+
+select avg(salary) from employee;
+
+select sum(salary) from employee;
+
+select count(id) from employee;
+
+-- join
+select e.id,name,b.id,branch from employee as e inner join branch as b on e.id=b.id;
+
+select e.id,name,b.id,branch from employee as e left join branch as b on e.id=b.id;
+
+select e.id,name,b.id,branch from employee as e right join branch as b on e.id=b.id;
+
+-- group by
+select count(id) from employee group by brId;
+
+select count(id) from employee group by brId having count(id)>1 ;
+
+-- sub query
+select * from employee where salary=(select max(salary) salary from employee);
+
+select * from employee where salary in(select max(salary) salary from employee);
+
+select * from employee where salary not in(select max(salary) salary from employee);
