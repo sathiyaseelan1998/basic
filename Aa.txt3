@@ -11,7 +11,7 @@ class Abc implements Inter1
 
 	void a()
 	{
-		int a=10;
+		int a=100;
 		int b=20;
 
 		System.out.println(a+b);
