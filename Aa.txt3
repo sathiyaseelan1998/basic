@@ -25,10 +25,10 @@ class Abc implements Inter1
 		System.out.println(a+b);
 		System.out.println("method b");
 	}
-	/**String str=" this is play ground";
+   		String str=" this is play ground";
 		String[] s=str.split(" ");
 		String word="";
-		int count=0;**/
+		int count=0; 
 
 	public static void main(String arg[])
 	{
