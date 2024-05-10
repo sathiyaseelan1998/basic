@@ -1,4 +1,4 @@
-interface Interb
+interface Inter
 {
 	void a(); //incomplete method 
 } 
