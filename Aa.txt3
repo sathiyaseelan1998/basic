@@ -16,6 +16,7 @@ class Abc implements Inter1
 
 		System.out.println(a-b);
 		System.out.println("method a");
+                System.out.println("Happy New Year 2025");
 	}
 	void b()
 	{
