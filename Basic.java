@@ -42,7 +42,6 @@ public class Basic {
 	}
 
 	private void reverseNo() {
-		// TODO Auto-generated method stub
 		int no=1234;
 		int rev=0;
 		while(no>0){
